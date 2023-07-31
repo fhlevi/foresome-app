@@ -12,13 +12,13 @@ Packages that have been installed in this boilerplate
 
 ## Requirements
 * [`Axios`](https://github.com/axios/axios)
-* [`Zustand`](https://github.com/pmndrs/zustand)
+* [`Redux`](https://redux.js.org/introduction/getting-started)
 * [`React Hook Form`](https://react-hook-form.com)
 * [`Tailwind`](https://tailwindcss.com/docs/installation)
 * [`React Query`](https://react-query.tanstack.com)
 
 ## Usage for development
 1. Open your terminal or command prompt
-2. Type `git clone https://github.com/fhlevi/NextBoilerplate.git`
+2. Type `git clone https://github.com/fhlevi/foresome.git`
 3. Open the folder and type `npm install` for install dependencies
-6. Type `npm run dev` for run this app.
+6. Type `npm run dev` for run this app with port default 3000 or run with `npm run start:express` for custom port.
