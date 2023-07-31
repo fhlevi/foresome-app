@@ -3,11 +3,13 @@ import { createSlice } from "@reduxjs/toolkit";
 
 interface SubscribeInterface {
     email?: string;
+    name?: string;
     step?: number;
 }
 
 export const initialState: SubscribeInterface = {
     email: '',
+    name: '',
     step: 1
 }
 
@@ -19,7 +21,8 @@ const Subscribe = createSlice({
             return {
                 ...state,
                 step: action?.payload?.step,
-                email: action?.payload?.email
+                email: action?.payload?.email,
+                name: action?.payload?.name
             }
         },
         mutClearSubscription: () => {
@@ -30,7 +33,6 @@ const Subscribe = createSlice({
 
 const {
     mutSetSubscription,
-    mutClearSubscription
 } = Subscribe.actions
 
 export const setSubscription = (data?: any) => {

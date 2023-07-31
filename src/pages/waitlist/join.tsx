@@ -1,65 +1,65 @@
 import React from 'react'
-import JoinWaitList from 'components/sections/waitlist/join-waitlist';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Image from 'next/image';
-import { setClearSubscription, setSubscription } from 'slices/subscribe';
-import { Dispatch } from 'redux';
 import router from 'next/router';
-import { RootState } from 'config/redux/wrapper-redux';
-import RegisterWaitlist from 'components/sections/waitlist/register-waitlist';
-import SuccessWaitlist from 'components/sections/waitlist/success-waitlist';
-
-type SectionProps = {
-    step: number
-}
-
-const WaitlistSections: React.FC<SectionProps> = ({ step }) => {
-    const dispatch: Dispatch<any> = useDispatch();
-
-    const handleNextStep = (formVal: SectionProps) => {
-        const data = {
-            ...formVal,
-        }
-
-        dispatch(setSubscription(data));
-    }
-
-    if (step === 2) {
-        return <RegisterWaitlist onNextStep={handleNextStep} />
-    }
-
-    return <JoinWaitList onNextStep={handleNextStep}/>;
-}
+import { Dispatch } from 'redux';
+import { useForm, SubmitHandler } from 'react-hook-form';
+import { setSubscription } from 'slices/subscribe';
+import WrapperWaitlist from 'components/wrappers/wrapper-waitlist';
+import InputText from 'components/forms/input-text/input-text';
+import Button from 'components/commons/button';
+import { Inputs } from 'utils/types/input';
+import { validateRequired, validateEmail } from 'utils/validations/form-validation';
 
 const JoinPage = () => {
     const dispatch: Dispatch<any> = useDispatch();
-    const { step } = useSelector((state: RootState) => state.SubscribeReducer)
+    const { handleSubmit, register, formState: { errors } } = useForm<Inputs>();
 
-    const handleToHomePage = (): void => {
-        dispatch(setClearSubscription())
-        router.push('/');
-    }
+    const onSubmit: SubmitHandler<Inputs> = (formVal) => {
+        const data = {
+            ...formVal,
+            step: 2
+        }
 
-    if (step === 3) {
-        return <SuccessWaitlist onClick={handleToHomePage} />
+        dispatch(setSubscription(data));
+
+        router.push('/waitlist/register');
     }
 
     return (
-        <div className="flex flex-row w-screen h-screen relative items-center justify-center">
-            <div className="grow relative"></div>
-            <div className="flex flex-row gap-[61.28px] absolute z-10">
-                <WaitlistSections step={step} />
+        <WrapperWaitlist>
+            <div className="flex flex-col gap-3 xl:items-center xl:justify-center">
+                <div className="w-full xl:w-[720px] text-green-800 text-[50px] text-center xl:text-left xl:text-[65px] font-black">Join the waitlist and be the first to be notified once we`ve launched</div>
+                <form noValidate onSubmit={handleSubmit(onSubmit)} className="w-full xl:h-[123px] flex flex-col xl:flex-row gap-3">
+                    <div>
+                        <InputText
+                            name={'email'}
+                            placeholder="Your Email"
+                            variant="primary"
+                            className="!w-full xl:max-w-[474px]"
+                            innerRef={register('email', { validate: { validateRequired, validateEmail } })}
+                            errors={errors}
+                        />
+                    </div>
+                    <div>
+                        <Button
+                            label="Join Waitlist"
+                            size="md"
+                            type="submit"
+                            className="!w-full left-0 top-[74px] h-[60px] min-w-[169px] xl:!w-auto"
+                        />
+                    </div>
+                </form>
             </div>
-            <div className="w-[511.6px] h-full relative">
-                <div className="w-full h-full bg-green-800 absolute" />
+            <div className="w-full xl:w-[383.48px] xl:h-[743.96px]">
                 <Image
-                    className="left-0 top-[0.06px] absolute opacity-40"
-                    src="/images/banner/waitlist-join-bg.png"
-                    alt="waitlist-join Logo"
-                    layout='fill'
+                    src={'/images/logo/waitlist-join.png'}
+                    alt='waitlist-join logo'
+                    width={383.48}
+                    height={743.96}
                 />
             </div>
-        </div>
+        </WrapperWaitlist>
     )
 }
 

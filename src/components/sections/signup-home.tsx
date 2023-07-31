@@ -23,17 +23,19 @@ export default function SignupHome() {
 
         dispatch(setSubscription(data));
 
-        router.push('/waitlist/join')
+        router.push('/waitlist/register')
     }
 
     return (
         <div className="w-full xl:max-w-[1480.48px] h-auto xl:h-[456.92px] relative bg-green-800 rounded-[20px]">
-            <Image
-                className="left-0 top-[0.06px] absolute opacity-40"
-                src="/images/banner/signup-banner.png"
-                alt="signup-banner Logo"
-                layout="fill"
-            />
+            <div className="left-0 top-[0.06px] opacity-40 pointer-events-none">
+                <Image
+                    src="/images/banner/signup-banner.png"
+                    alt="signup-banner Logo"
+                    layout="fill"
+                    objectFit="cover"
+                />
+            </div>
             <div className="flex flex-col h-full xl:flex-row gap-5 xl:gap-20 py-[50px] xl:py-[109px] px-5 xl:px-32">
                 <div className="flex flex-col">
                     <div className="text-white text-[35px] xl:text-[50px] font-black">

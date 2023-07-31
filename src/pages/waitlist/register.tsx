@@ -1,46 +1,49 @@
-import React from 'react'
-import Image from 'next/image'
+import React from 'react';
+import Image from 'next/image';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { Dispatch } from 'redux';
 import InputText from 'components/forms/input-text/input-text';
 import Button from 'components/commons/button';
+import WrapperWaitlist from 'components/wrappers/wrapper-waitlist';
 import { RootState } from 'config/redux/wrapper-redux';
-import { Inputs } from 'utils/types/input';
 import { validateRequired, validateEmail } from 'utils/validations/form-validation';
+import { Inputs } from 'utils/types/input'
+import { setSubscription } from 'slices/subscribe';
+import Router from 'next/router';
 
-type PropsType = {
-    step: number
-}
+type Props = {}
 
-interface Props {
-    onNextStep: (formVal: PropsType) => void;
-}
-
-const RegisterWaitlist: React.FC<Props> = ({ onNextStep }) => {
+const RegisterPage = ({ }: Props) => {
     const { handleSubmit, register, formState: { errors } } = useForm<Inputs>();
+    const dispatch: Dispatch<any> = useDispatch();
 
     const onSubmit: SubmitHandler<Inputs> = (formVal) => {
-        onNextStep({
+        const data = {
             ...formVal,
             step: 3
-        })
+        }
+
+        dispatch(setSubscription(data));
+
+        Router.push('/waitlist/success')
     }
 
     const { email } = useSelector(
         (state: RootState) => state.SubscribeReducer
     )
-    
+
     return (
-        <>
-            <div className="flex flex-col gap-3 items-center justify-center">
-                <div className="w-[720px] text-green-800 text-[65px] font-black">Get early access before the general public.</div>
+        <WrapperWaitlist>
+            <div className="flex flex-col gap-3 xl:items-center xl:justify-center">
+                <div className="xl:w-[720px] text-green-800 text-[50px] xl:text-[65px] text-center xl:text-left font-black">Get early access before the general public.</div>
                 <form noValidate onSubmit={handleSubmit(onSubmit)} className="w-full h-auto flex flex-col gap-10">
                     <div className="flex flex-col gap-3">
                         <InputText
                             name={'name'}
                             placeholder="Your Name"
                             variant="primary"
-                            className="max-w-[460px]"
+                            className="!w-full xl:!max-w-[460px]"
                             innerRef={register('name', { validate: { validateRequired } })}
                             errors={errors}
                         />
@@ -48,7 +51,7 @@ const RegisterWaitlist: React.FC<Props> = ({ onNextStep }) => {
                             name={'email'}
                             placeholder="Email Address"
                             variant="primary"
-                            className="max-w-[460px]"
+                            className="!w-full xl:!max-w-[460px]"
                             defaultValue={email}
                             innerRef={register('email', { validate: { validateRequired, validateEmail } })}
                             errors={errors}
@@ -75,12 +78,12 @@ const RegisterWaitlist: React.FC<Props> = ({ onNextStep }) => {
                             label="Submit"
                             size="md"
                             type="submit"
-                            className="left-0 top-[74px] h-[60px] w-[460px]"
+                            className="left-0 xl:top-[74px] h-[60px] !w-full xl:!max-w-[460px]"
                         />
                     </div>
                 </form>
             </div>
-            <div className="w-[688.16px] h-[743.96px]">
+            <div className="xl:w-[688.16px] xl:h-[743.96px]">
                 <Image
                     src={'/images/logo/waitlist-register.png'}
                     alt='waitlist-register logo'
@@ -88,8 +91,8 @@ const RegisterWaitlist: React.FC<Props> = ({ onNextStep }) => {
                     height={743.96}
                 />
             </div>
-        </>
+        </WrapperWaitlist>
     )
 }
 
-export default RegisterWaitlist;
+export default RegisterPage

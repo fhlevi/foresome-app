@@ -32,7 +32,7 @@ export default function Button({
     return (
       <button
         type={type}
-        className={clsx("px-[49px] py-[15px] rounded-[5px] justify-center items-center gap-2.5 inline-flex text-base", sizeClassName, variantClassName, className)}
+        className={clsx("rounded-[5px] justify-center items-center gap-2.5 inline-flex text-base", sizeClassName, variantClassName, className)}
         disabled={disabled}
         onClick={onClick}
         {...props}
