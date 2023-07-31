@@ -10,9 +10,9 @@ const Home: NextPage = () => {
   return (
     <DefaultLayout>
       <BannerHome />
-        <SignupHome />
-          <IntroductionHome />
-        <VactionHome />
+      <SignupHome />
+      <IntroductionHome />
+      <VactionHome />
       <BusinessHome />
     </DefaultLayout>
   );

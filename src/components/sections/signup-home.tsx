@@ -27,40 +27,44 @@ export default function SignupHome() {
     }
 
     return (
-        <div className="w-full max-w-[1480.48px] h-[456.92px] relative">
-            <div className="w-full max-w-[1480.48px] h-[456.86px] left-0 top-[0.06px] absolute rounded-[20px] bg-green-800" />
+        <div className="w-full xl:max-w-[1480.48px] h-auto xl:h-[456.92px] relative bg-green-800 rounded-[20px]">
             <Image
-                className="left-0 top-[0.06px] absolute rounded-[20px] opacity-40"
+                className="left-0 top-[0.06px] absolute opacity-40"
                 src="/images/banner/signup-banner.png"
                 alt="signup-banner Logo"
-                width={1480.48}
-                height={456.86}
+                layout="fill"
             />
-            <div className="w-[594.73px] left-[165.23px] top-[115.46px] absolute text-white text-[50px] font-black">
-                Sign up for the newsletter today.
+            <div className="flex flex-col h-full xl:flex-row gap-5 xl:gap-20 py-[50px] xl:py-[109px] px-5 xl:px-32">
+                <div className="flex flex-col">
+                    <div className="text-white text-[35px] xl:text-[50px] font-black">
+                        Sign up for the newsletter today.
+                    </div>
+                    <div className="text-white text-base xl:text-lg font-normal xl:leading-[30px]">
+                        Get launch updates and be the first to know when Foresome is live in
+                        your area. Make the most of vacations, business trips, time off, or
+                        the weekend at home with Foresome, golf’s only compatibility app.
+                    </div>
+                </div>
+                <div className="flex xl:items-center xl:justify-center">
+                    <form noValidate onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-[14px] w-full">
+                        <InputText
+                            name={'email'}
+                            placeholder="Your Email"
+                            innerRef={register('email', { validate: { validateRequired, validateEmail } })}
+                            errors={errors}
+                            className="!w-full xl:!w-[474px]"
+                        />
+                        <Button
+                            label="Subscribe"
+                            outline={false}
+                            variant="neutral"
+                            size="md"
+                            disabled={false}
+                            type="submit"
+                        />
+                    </form>
+                </div>
             </div>
-            <div className="w-[545.54px] left-[165.23px] top-[261.46px] absolute text-white text-lg font-normal leading-[30px]">
-                Get launch updates and be the first to know when Foresome is live in
-                your area. Make the most of vacations, business trips, time off, or
-                the weekend at home with Foresome, golf’s only compatibility app.
-            </div>
-            <form noValidate onSubmit={handleSubmit(onSubmit)} className="w-[474px] h-[123px] left-[850.77px] top-[166.85px] absolute">
-                <InputText
-                    name={'email'}
-                    placeholder="Your Email"
-                    innerRef={register('email', { validate: { validateRequired, validateEmail } })}
-                    errors={errors}
-                />
-                <Button
-                    label="Subscribe"
-                    outline={false}
-                    variant="neutral"
-                    size="md"
-                    disabled={false}
-                    type="submit"
-                    className="left-0 top-[74px] absolute"
-                />
-            </form>
         </div>
     )
 }

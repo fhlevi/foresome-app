@@ -15,20 +15,20 @@ export const IntroductionHome = () => {
     }
 
     return (
-        <div className="max-w-[1040px] flex flex-col gap-[60px]">
+        <div className="w-full xl:max-w-[1040px] flex flex-col gap-[60px]">
             <div className="text-center">
                 <div className="text-green-800 text-base font-bold uppercase leading-[30px] tracking-[3.20px]">how it works</div>
-                <div className="text-green-950 text-[50px] font-black">Introducing Foresome</div>
-                <div className="text-neutral-700 text-lg font-normal leading-[30px]">We all know that Tiger and Sergio hated playing with each other, but they had no choice. You do! Foresome is the golf compatibility app that helps you find ideal golf partners, either at your local golf course or when you are on the road.</div>
+                <div className="text-green-950 text-[35px] xl:text-[50px] font-black">Introducing Foresome</div>
+                <div className="text-neutral-700 mt-9 xl:mt-0 text-lg font-normal leading-[30px]">We all know that Tiger and Sergio hated playing with each other, but they had no choice. You do! Foresome is the golf compatibility app that helps you find ideal golf partners, either at your local golf course or when you are on the road.</div>
             </div>
-            <div className="flex flex-row gap-24 items-center justify-center">
+            <div className="flex flex-col xl:flex-row gap-24 items-center justify-center">
                 <Image 
                     src="/images/logo/introduction-1.png"
                     alt="Introduction Logo 1"
                     width={367}
                     height={712}
                 />
-                <div className="flex flex-col gap-10 w-[440px]">
+                <div className="flex flex-col gap-10 w-full text-center xl:text-left xl:w-[440px]">
                     <div className="flex flex-col gap-3">
                         <div className="text-green-800 text-base font-bold uppercase leading-[30px] tracking-[3.20px]">feature coming soon</div>
                         <div className="text-green-950 text-[35px] font-black">Join Local Tee Times</div>
@@ -38,11 +38,12 @@ export const IntroductionHome = () => {
                         label={'Join Now'} 
                         size={'lg'} 
                         onClick={() => handleNextPage('/waitlist/join')}
+                        className="!w-full xl:!w-[303.69px]"
                     />
                 </div>
             </div>
-            <div className="flex flex-row gap-24 items-center justify-center">
-                <div className="flex flex-col gap-10 w-[440px]">
+            <div className="flex xl:flex-row gap-24 items-center justify-center flex-col-reverse">
+                <div className="flex flex-col gap-10 xl:w-[440px] text-center xl:text-left">
                     <div className="flex flex-col gap-3">
                         <div className="text-green-950 text-[35px] font-black">Find Golfers Anywhere</div>
                         <div className="text-green-950 text-lg font-normal leading-[30px]">Enter parameters such as GHIN, pace of play, gambling preference, dinking preference, and more.</div>
@@ -51,6 +52,7 @@ export const IntroductionHome = () => {
                         label={'Join Now'} 
                         size={'lg'}     
                         onClick={() => handleNextPage('/waitlist/join')}  
+                        className="!w-full xl:!w-[303.69px]"
                     />
                 </div>
                 <Image 
