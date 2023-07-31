@@ -1,7 +1,7 @@
 import Button from 'components/commons/button'
+import router from 'next/router';
 import Image from 'next/image'
 import React from 'react'
-
 
 /**
  * IntroductionHome Component
@@ -10,6 +10,10 @@ import React from 'react'
  * @subcategory Secitons
  */
 export const IntroductionHome = () => {
+    const handleNextPage = (path: string) => {
+        router.push(path)
+    }
+
     return (
         <div className="max-w-[1040px] flex flex-col gap-[60px]">
             <div className="text-center">
@@ -32,11 +36,8 @@ export const IntroductionHome = () => {
                     </div>
                     <Button 
                         label={'Join Now'} 
-                        outline={false} 
-                        variant={'primary'} 
                         size={'lg'} 
-                        disabled={false} 
-                        type={'button'}                        
+                        onClick={() => handleNextPage('/waitlist/join')}
                     />
                 </div>
             </div>
@@ -48,11 +49,8 @@ export const IntroductionHome = () => {
                     </div>
                     <Button 
                         label={'Join Now'} 
-                        outline={false} 
-                        variant={'primary'} 
-                        size={'lg'} 
-                        disabled={false} 
-                        type={'button'}                        
+                        size={'lg'}     
+                        onClick={() => handleNextPage('/waitlist/join')}  
                     />
                 </div>
                 <Image 

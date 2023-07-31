@@ -1,4 +1,4 @@
-import { ReactNode, RefObject, MutableRefObject } from "react";
+import { ReactNode } from "react";
 
 export interface StyleByVariant {
     [key: string]: string;
@@ -7,7 +7,7 @@ export interface StyleByVariant {
 export interface InputTextInterface {
     name?: Required<string>;
     id?: string;
-    innerRef?: RefObject<HTMLInputElement> | MutableRefObject<HTMLInputElement> | ((instance: HTMLInputElement | null) => void);
+    innerRef?: any;
     isInvalid?: boolean | string
     errors?: object;
     type?: string;

@@ -7,12 +7,12 @@ export interface StyleByVariant {
 }
 
 export interface ButtonProps {
-  onClick?: () => void;
+  onClick?: (params: any) => void;
   className?: string;
-  label: string;
-  outline: boolean;
-  variant: "primary" | "neutral" | "error";
-  size: "sm" | "md" | "lg";
-  disabled: boolean;
-  type: "button" | "submit" | "reset";
+  label?: string;
+  outline?: boolean;
+  variant?: "primary" | "neutral" | "error";
+  size?: "sm" | "md" | "lg";
+  disabled?: boolean;
+  type?: "button" | "submit" | "reset";
 }

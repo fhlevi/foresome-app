@@ -1,5 +1,3 @@
-
-
 /**
  * BannerHome Component
  * @component

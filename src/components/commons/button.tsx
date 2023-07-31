@@ -21,7 +21,7 @@ export default function Button({
     };
 
     const styleByVariant: StyleByVariant = {
-      primary: outline ? "btn-outline--primary" : "bg-green-800 text-white",
+      primary: outline ? "border border-[#176B3A] text-[#176B3A]" : "bg-green-800 text-white",
       neutral: outline ? "btn-outline--neutral" : " bg-white text-green-800",
       error: outline ? "btn-outline--error" : "btn--error",
     };

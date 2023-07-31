@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 function Header() {
   return (
-    <header className="flex items-center justify-between px-4 h-[90px] border border-solid border-[#D4E0D9]">
+    <header className="flex items-center justify-between px-4 h-[90px] border border-solid border-[#D4E0D9] fixed w-full z-10 bg-white top-0">
       <Link href="/">
         <a className="px-10 py-[15px]">
           <Image 
