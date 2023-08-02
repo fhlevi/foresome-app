@@ -1,0 +1,11 @@
+.btn {
+    &--sm {
+        @apply text-sm;
+    }
+    &--md {
+        @apply text-lg
+    }
+    &--lg {
+        @apply text-lg
+    }
+}

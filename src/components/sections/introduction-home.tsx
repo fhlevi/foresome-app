@@ -38,7 +38,7 @@ export const IntroductionHome = () => {
                         label={'Join Now'} 
                         size={'lg'} 
                         onClick={() => handleNextPage('/waitlist/join')}
-                        className="!w-full xl:!w-[303.69px]"
+                        className="w-full xl:w-[303.69px] h-[49px]"
                     />
                 </div>
             </div>
@@ -49,10 +49,10 @@ export const IntroductionHome = () => {
                         <div className="text-green-950 text-lg font-normal leading-[30px]">Enter parameters such as GHIN, pace of play, gambling preference, dinking preference, and more.</div>
                     </div>
                     <Button 
-                        label={'Join Now'} 
+                        label={'Get the App and Find Golfers'} 
                         size={'lg'}     
                         onClick={() => handleNextPage('/waitlist/join')}  
-                        className="!w-full xl:!w-[303.69px]"
+                        className="w-full xl:w-[303.69px] h-[49px]"
                     />
                 </div>
                 <Image 

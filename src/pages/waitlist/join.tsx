@@ -36,7 +36,7 @@ const JoinPage = () => {
                             name={'email'}
                             placeholder="Your Email"
                             variant="primary"
-                            className="!w-full xl:max-w-[474px]"
+                            className="!w-full xl:!w-[460px]"
                             innerRef={register('email', { validate: { validateRequired, validateEmail } })}
                             errors={errors}
                         />
@@ -46,7 +46,7 @@ const JoinPage = () => {
                             label="Join Waitlist"
                             size="md"
                             type="submit"
-                            className="!w-full left-0 top-[74px] h-[60px] min-w-[169px] xl:!w-auto"
+                            className="w-full h-[58px] xl:w-[172px]"
                         />
                     </div>
                 </form>

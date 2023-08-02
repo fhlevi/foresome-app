@@ -61,14 +61,12 @@ const RegisterPage = ({ }: Props) => {
                             <Button
                                 label="iOS User"
                                 size="md"
-                                type="submit"
-                                className="left-0 top-[74px] h-[60px] w-[219px]"
+                                className="w-[219px] h-[53px] xl:h-[60px]"
                             />
                             <Button
                                 label="Android User"
-                                size="md"
-                                type="submit"
-                                className="left-0 top-[74px] h-[60px] w-[219px]"
+                                size="lg"
+                                className="w-[219px] h-[53px] xl:h-[60px]"
                                 outline
                             />
                         </div>
@@ -76,9 +74,9 @@ const RegisterPage = ({ }: Props) => {
                     <div>
                         <Button
                             label="Submit"
-                            size="md"
+                            size="lg"
                             type="submit"
-                            className="left-0 xl:top-[74px] h-[60px] !w-full xl:!max-w-[460px]"
+                            className="w-full xl:max-w-[460px] h-[60px]"
                         />
                     </div>
                 </form>

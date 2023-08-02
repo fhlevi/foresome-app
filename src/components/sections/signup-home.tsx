@@ -60,9 +60,10 @@ export default function SignupHome() {
                             label="Subscribe"
                             outline={false}
                             variant="neutral"
-                            size="md"
+                            size="lg"
                             disabled={false}
                             type="submit"
+                            className="w-full xl:max-w-[169px] h-[49px]"
                         />
                     </form>
                 </div>

@@ -9,15 +9,15 @@ import { ButtonProps, StyleBySize, StyleByVariant } from "utils/interfaces/butto
  * @subcategory Commons
  */
 export default function Button({
-    type = "button", onClick, disabled, size = "md", 
+    type = "button", onClick, disabled, size = "lg", 
     variant = "primary", outline, label, className, 
     ...props
 }: ButtonProps) {
     
     const styleBySize: StyleBySize = {
       sm: "btn--sm",
-      lg: "w-[303.69px] h-[49px]",
-      md: "w-[169px] h-[49px]",
+      lg: "btn--lg",
+      md: "btn--md",
     };
 
     const styleByVariant: StyleByVariant = {

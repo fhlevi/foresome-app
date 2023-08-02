@@ -22,7 +22,7 @@ const Subscribe = createSlice({
                 ...state,
                 step: action?.payload?.step,
                 email: action?.payload?.email,
-                name: action?.payload?.name
+                name: action?.payload?.name ?? ''
             }
         },
         mutClearSubscription: () => {

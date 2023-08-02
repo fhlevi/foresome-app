@@ -1,5 +1,10 @@
 @tailwind base;
+
+
 @tailwind components;
+
+@import 'components/buttons';
+
 @tailwind utilities;
 
 html,

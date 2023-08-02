@@ -39,7 +39,7 @@ export default function InputText({
                     {leftIcon}
                     <input
                         type={type}
-                        className={clsx('w-[474px] h-[60px] rounded-[5px] py-5 px-7 focus:outline-none', isError && 'border !border-red-600 focus:border-red-600 focus:ring-1 focus:ring-red-600', variantClassName, className)}
+                        className={clsx('rounded-[5px] py-4 px-7 focus:outline-none', isError && 'border !border-red-600 focus:border-red-600 focus:ring-1 focus:ring-red-600', variantClassName, className)}
                         name={name}
                         id={id ?? name}
                         disabled={disabled}
