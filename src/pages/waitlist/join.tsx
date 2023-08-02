@@ -10,6 +10,7 @@ import InputText from 'components/forms/input-text/input-text';
 import Button from 'components/commons/button';
 import { Inputs } from 'utils/types/input';
 import { validateRequired, validateEmail } from 'utils/validations/form-validation';
+import Title from 'components/abstracts/title';
 
 const JoinPage = () => {
     const dispatch: Dispatch<any> = useDispatch();
@@ -27,39 +28,43 @@ const JoinPage = () => {
     }
 
     return (
-        <WrapperWaitlist>
-            <div className="flex flex-col gap-3 xl:items-center xl:justify-center">
-                <div className="w-full xl:w-[720px] text-green-800 text-[50px] text-center xl:text-left xl:text-[65px] font-black">Join the waitlist and be the first to be notified once we`ve launched</div>
-                <form noValidate onSubmit={handleSubmit(onSubmit)} className="w-full xl:h-[123px] flex flex-col xl:flex-row gap-3">
-                    <div>
-                        <InputText
-                            name={'email'}
-                            placeholder="Your Email"
-                            variant="primary"
-                            className="!w-full xl:!w-[460px]"
-                            innerRef={register('email', { validate: { validateRequired, validateEmail } })}
-                            errors={errors}
-                        />
-                    </div>
-                    <div>
-                        <Button
-                            label="Join Waitlist"
-                            size="md"
-                            type="submit"
-                            className="w-full h-[58px] xl:w-[172px]"
-                        />
-                    </div>
-                </form>
-            </div>
-            <div className="w-full xl:w-[383.48px] xl:h-[743.96px]">
-                <Image
-                    src={'/images/logo/waitlist-join.png'}
-                    alt='waitlist-join logo'
-                    width={383.48}
-                    height={743.96}
-                />
-            </div>
-        </WrapperWaitlist>
+        <>
+            <Title content="Join Waitlist" />
+            
+            <WrapperWaitlist>
+                <div className="flex flex-col gap-3 xl:items-center xl:justify-center">
+                    <div className="w-full xl:w-[720px] text-green-800 text-[50px] text-center xl:text-left xl:text-[65px] font-black">Join the waitlist and be the first to be notified once we`ve launched</div>
+                    <form noValidate onSubmit={handleSubmit(onSubmit)} className="w-full xl:h-[123px] flex flex-col xl:flex-row gap-3">
+                        <div>
+                            <InputText
+                                name={'email'}
+                                placeholder="Your Email"
+                                variant="primary"
+                                className="!w-full xl:!w-[460px]"
+                                innerRef={register('email', { validate: { validateRequired, validateEmail } })}
+                                errors={errors}
+                            />
+                        </div>
+                        <div>
+                            <Button
+                                label="Join Waitlist"
+                                size="md"
+                                type="submit"
+                                className="w-full h-[58px] xl:w-[172px]"
+                            />
+                        </div>
+                    </form>
+                </div>
+                <div className="w-full xl:w-[383.48px] xl:h-[743.96px]">
+                    <Image
+                        src={'/images/logo/waitlist-join.png'}
+                        alt='waitlist-join logo'
+                        width={383.48}
+                        height={743.96}
+                    />
+                </div>
+            </WrapperWaitlist>
+        </>
     )
 }
 
