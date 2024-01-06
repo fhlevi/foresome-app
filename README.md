@@ -1,4 +1,4 @@
-<h1 align='center'>NextJs Boilerplate</h1>
+<h1 align='center'>Foresome</h1>
 
 ## Table of Contents
 
@@ -20,5 +20,5 @@ Packages that have been installed in this boilerplate
 ## Usage for development
 1. Open your terminal or command prompt
 2. Type `git clone https://github.com/fhlevi/foresome.git`
-3. Open the folder and type `npm install` for install dependencies
-6. Type `npm run dev` for run this app with port default 3000 or run with `npm run start:express` for custom port.
+3. Open the folder and type `npm install` to install dependencies
+6. Type `npm run dev` for running this app with port default 3000 or run with `npm run start:express` for custom port.
