@@ -22,3 +22,6 @@ Packages that have been installed in this boilerplate
 2. Type `git clone https://github.com/fhlevi/foresome.git`
 3. Open the folder and type `npm install` to install dependencies
 6. Type `npm run dev` for running this app with port default 3000 or run with `npm run start:express` for custom port.
+
+## Release Link
+[Preview Link](https://foresome.vercel.app/)
