@@ -1,6 +1,6 @@
-<h1 align='center'>Foresome</h1>
+<h1 align='left'>🌐 Foresome</h1>
 
-<p align="center">
+<p align="left">
     <img src="https://nextjs.org/static/favicon/favicon.ico" width="48" alt="Next.js Logo" />
 </p>
 
