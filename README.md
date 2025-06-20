@@ -10,6 +10,12 @@
 
 ---
 
+## 🚀 Demo
+
+Lihat aplikasi yang berjalan di: [faisalfahlevi.vercel.app](https://faisalfahlevi.vercel.app/)
+
+---
+
 ## 📚 Table of Contents
 
 - [Overview](#overview)
