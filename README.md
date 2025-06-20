@@ -1,10 +1,6 @@
 <h1 align='left'>🌐 Foresome</h1>
 
 <p align="left">
-    <img src="https://nextjs.org/static/favicon/favicon.ico" width="48" alt="Next.js Logo" />
-</p>
-
-<p align="center">
     <b>Modern, scalable, and ready-to-use Next.js boilerplate for rapid web development.</b>
 </p>
 
