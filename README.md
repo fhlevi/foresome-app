@@ -1,4 +1,4 @@
-<h1 align="center">Foresome Next.js Boilerplate</h1>
+<h1 align='center'>Foresome</h1>
 
 <p align="center">
     <img src="https://nextjs.org/static/favicon/favicon.ico" width="48" alt="Next.js Logo" />
