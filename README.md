@@ -8,7 +8,7 @@
 
 ## 🚀 Demo
 
-Lihat aplikasi yang berjalan di: [faisalfahlevi.vercel.app](https://faisalfahlevi.vercel.app/)
+Lihat aplikasi yang berjalan di: [foresome.vercel.app](https://foresome.vercel.app/)
 
 ---
 
